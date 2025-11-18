@@ -128,6 +128,18 @@ from .monitoring import (
     ExecutionLog,
 )
 
+# Integrations with Thor's packages
+from .integrations import (
+    DolBackedRegistry,
+    DolLogger,
+    adapt_signature,
+    auto_convert,
+    pipeline,
+    create_agent_dag,
+    fetch_agent_repo,
+    cache_agent_data,
+)
+
 __all__ = [
     # Version
     "__version__",
@@ -197,4 +209,13 @@ __all__ = [
     "AgentLogger",
     "LogEntry",
     "ExecutionLog",
+    # Integrations
+    "DolBackedRegistry",
+    "DolLogger",
+    "adapt_signature",
+    "auto_convert",
+    "pipeline",
+    "create_agent_dag",
+    "fetch_agent_repo",
+    "cache_agent_data",
 ]
