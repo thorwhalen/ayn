@@ -140,6 +140,21 @@ from .integrations import (
     cache_agent_data,
 )
 
+# Security
+from .security import (
+    PromptGuard,
+    InjectionDetector,
+    InjectionResult,
+    OutputValidator,
+    OutputFilter,
+    PIIDetector,
+    ToxicContentFilter,
+    Permission,
+    PermissionSet,
+    PermissionManager,
+    require_permission,
+)
+
 __all__ = [
     # Version
     "__version__",
@@ -218,4 +233,16 @@ __all__ = [
     "create_agent_dag",
     "fetch_agent_repo",
     "cache_agent_data",
+    # Security
+    "PromptGuard",
+    "InjectionDetector",
+    "InjectionResult",
+    "OutputValidator",
+    "OutputFilter",
+    "PIIDetector",
+    "ToxicContentFilter",
+    "Permission",
+    "PermissionSet",
+    "PermissionManager",
+    "require_permission",
 ]
