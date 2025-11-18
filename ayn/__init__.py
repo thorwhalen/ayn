@@ -166,6 +166,25 @@ from .prompts import (
     OptimizationResult,
 )
 
+# Optimization
+from .optimization import (
+    CostOptimizer,
+    CostAnalysis,
+    OptimizationRecommendation,
+    PerformanceOptimizer,
+    PerformanceAnalysis,
+)
+
+# Collaboration
+from .collaboration import (
+    AgentDebate,
+    DebateResult,
+    ConsensusStrategy,
+    AgentEnsemble,
+    EnsembleStrategy,
+    EnsembleResult,
+)
+
 __all__ = [
     # Version
     "__version__",
@@ -264,4 +283,17 @@ __all__ = [
     "SelectionStrategy",
     "PromptOptimizer",
     "OptimizationResult",
+    # Optimization
+    "CostOptimizer",
+    "CostAnalysis",
+    "OptimizationRecommendation",
+    "PerformanceOptimizer",
+    "PerformanceAnalysis",
+    # Collaboration
+    "AgentDebate",
+    "DebateResult",
+    "ConsensusStrategy",
+    "AgentEnsemble",
+    "EnsembleStrategy",
+    "EnsembleResult",
 ]
