@@ -155,6 +155,17 @@ from .security import (
     require_permission,
 )
 
+# Prompts
+from .prompts import (
+    PromptRegistry,
+    PromptVersion,
+    PromptTemplate,
+    PromptSelector,
+    SelectionStrategy,
+    PromptOptimizer,
+    OptimizationResult,
+)
+
 __all__ = [
     # Version
     "__version__",
@@ -245,4 +256,12 @@ __all__ = [
     "PermissionSet",
     "PermissionManager",
     "require_permission",
+    # Prompts
+    "PromptRegistry",
+    "PromptVersion",
+    "PromptTemplate",
+    "PromptSelector",
+    "SelectionStrategy",
+    "PromptOptimizer",
+    "OptimizationResult",
 ]
