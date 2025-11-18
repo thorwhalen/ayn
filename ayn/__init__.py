@@ -83,6 +83,51 @@ from .utils import (
     export_agent_full_stack,
 )
 
+# Validation
+from .validation import (
+    AgentValidator,
+    ValidationIssue,
+    ValidationSeverity,
+    ValidationResult,
+)
+
+# Caching
+from .caching import (
+    Cache,
+    InMemoryCache,
+    SemanticCache,
+    CacheConfig,
+    CacheStats,
+    cached,
+    semantic_cached,
+)
+
+# Testing
+from .testing import (
+    Contract,
+    contract,
+    InputSchema,
+    OutputSchema,
+    PerformanceConstraint,
+    CostConstraint,
+    TestRunner,
+    TestResult,
+    TestSuite,
+)
+
+# Monitoring
+from .monitoring import (
+    AgentHealthCheck,
+    HealthStatus,
+    HealthCheckResult,
+    MetricsCollector,
+    Metric,
+    MetricType,
+    AgentLogger,
+    LogEntry,
+    ExecutionLog,
+)
+
 __all__ = [
     # Version
     "__version__",
@@ -119,4 +164,37 @@ __all__ = [
     # Convenience
     "create_agent_from_registry",
     "export_agent_full_stack",
+    # Validation
+    "AgentValidator",
+    "ValidationIssue",
+    "ValidationSeverity",
+    "ValidationResult",
+    # Caching
+    "Cache",
+    "InMemoryCache",
+    "SemanticCache",
+    "CacheConfig",
+    "CacheStats",
+    "cached",
+    "semantic_cached",
+    # Testing
+    "Contract",
+    "contract",
+    "InputSchema",
+    "OutputSchema",
+    "PerformanceConstraint",
+    "CostConstraint",
+    "TestRunner",
+    "TestResult",
+    "TestSuite",
+    # Monitoring
+    "AgentHealthCheck",
+    "HealthStatus",
+    "HealthCheckResult",
+    "MetricsCollector",
+    "Metric",
+    "MetricType",
+    "AgentLogger",
+    "LogEntry",
+    "ExecutionLog",
 ]
