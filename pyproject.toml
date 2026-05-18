@@ -157,6 +157,7 @@ coverage_report_format = [
 exclude_paths = [
     "examples",
     "scrap",
+    "misc",
 ]
 test_on_windows = true
 
@@ -182,3 +183,4 @@ ignore_paths = [
     "scrap/",
     "examples/",
 ]
+
