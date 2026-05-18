@@ -1,0 +1,4 @@
+ayn.core.config
+===============
+.. automodule:: ayn.core.config
+   :members:

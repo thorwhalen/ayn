@@ -1,0 +1,215 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ayn.mcp.models &mdash; ayn 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ayn.mcp.server" href="server.html" />
+    <link rel="prev" title="ayn.mcp" href="../mcp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ayn
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../ayn.html">ayn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../actions.html">ayn.actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../actions/chatgpt.html">ayn.actions.chatgpt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../actions/claude.html">ayn.actions.claude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../controllers.html">ayn.controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../controllers/base.html">ayn.controllers.base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../controllers/framework.html">ayn.controllers.framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../controllers/generic.html">ayn.controllers.generic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">ayn.core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/config.html">ayn.core.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/models.html">ayn.core.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../export.html">ayn.export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../export/fastapi_export.html">ayn.export.fastapi_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../export/langserve_export.html">ayn.export.langserve_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mcp.html">ayn.mcp</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ayn.mcp.models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.mcp.models.MCPPrompt"><code class="docutils literal notranslate"><span class="pre">MCPPrompt</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.mcp.models.MCPPrompt.to_dict"><code class="docutils literal notranslate"><span class="pre">MCPPrompt.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.mcp.models.MCPResource"><code class="docutils literal notranslate"><span class="pre">MCPResource</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.mcp.models.MCPResource.to_dict"><code class="docutils literal notranslate"><span class="pre">MCPResource.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.mcp.models.MCPTool"><code class="docutils literal notranslate"><span class="pre">MCPTool</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.mcp.models.MCPTool.to_dict"><code class="docutils literal notranslate"><span class="pre">MCPTool.to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">ayn.mcp.server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registry.html">ayn.registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registry/base.html">ayn.registry.base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registry/searchers.html">ayn.registry.searchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">ayn.utils</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ayn</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ayn.mcp.models</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/module_docs/ayn/mcp/models.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ayn.mcp.models">
+<span id="ayn-mcp-models"></span><h1>ayn.mcp.models<a class="headerlink" href="#module-ayn.mcp.models" title="Link to this heading"></a></h1>
+<p>MCP data models.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.mcp.models.MCPPrompt">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.mcp.models.</span></span><span class="sig-name descname"><span class="pre">MCPPrompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ayn/mcp/models.html#MCPPrompt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.mcp.models.MCPPrompt" title="Link to this definition"></a></dt>
+<dd><p>MCP prompt template</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prompt</span> <span class="o">=</span> <span class="n">MCPPrompt</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;summarize&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Summarize text&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">arguments</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Text to summarize&quot;</span><span class="p">,</span> <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prompt</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;summarize&#39;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.mcp.models.MCPPrompt.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../../../_modules/ayn/mcp/models.html#MCPPrompt.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.mcp.models.MCPPrompt.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert to MCP prompt format</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.mcp.models.MCPResource">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.mcp.models.</span></span><span class="sig-name descname"><span class="pre">MCPResource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mimeType</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'text/plain'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ayn/mcp/models.html#MCPResource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.mcp.models.MCPResource" title="Link to this definition"></a></dt>
+<dd><p>MCP resource definition</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">resource</span> <span class="o">=</span> <span class="n">MCPResource</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">uri</span><span class="o">=</span><span class="s2">&quot;file:///data.csv&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Dataset&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">mimeType</span><span class="o">=</span><span class="s2">&quot;text/csv&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">resource</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Dataset&#39;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.mcp.models.MCPResource.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../../../_modules/ayn/mcp/models.html#MCPResource.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.mcp.models.MCPResource.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert to MCP resource format</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.mcp.models.MCPTool">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.mcp.models.</span></span><span class="sig-name descname"><span class="pre">MCPTool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_schema</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ayn/mcp/models.html#MCPTool"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.mcp.models.MCPTool" title="Link to this definition"></a></dt>
+<dd><p>MCP tool definition</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tool</span> <span class="o">=</span> <span class="n">MCPTool</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;search&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Search for information&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">input_schema</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}}}</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tool</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;search&#39;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.mcp.models.MCPTool.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../../../_modules/ayn/mcp/models.html#MCPTool.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.mcp.models.MCPTool.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert to MCP tool format</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../mcp.html" class="btn btn-neutral float-left" title="ayn.mcp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="server.html" class="btn btn-neutral float-right" title="ayn.mcp.server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright NO COPYRIGHT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+ayn.controllers.generic
+=======================
+.. automodule:: ayn.controllers.generic
+   :members:

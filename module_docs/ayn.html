@@ -1,0 +1,907 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ayn &mdash; ayn 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/toggleprompt.js?v=d7ede5d2"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ayn.actions" href="ayn/actions.html" />
+    <link rel="prev" title="Welcome to ayn’s documentation!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ayn
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ayn</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.AgentController"><code class="docutils literal notranslate"><span class="pre">AgentController</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.AgentController.ainvoke"><code class="docutils literal notranslate"><span class="pre">AgentController.ainvoke()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.AgentController.invoke"><code class="docutils literal notranslate"><span class="pre">AgentController.invoke()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.AgentController.stream"><code class="docutils literal notranslate"><span class="pre">AgentController.stream()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.AgentFramework"><code class="docutils literal notranslate"><span class="pre">AgentFramework</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.AgentMetadata"><code class="docutils literal notranslate"><span class="pre">AgentMetadata</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.AgentMetadata.from_dict"><code class="docutils literal notranslate"><span class="pre">AgentMetadata.from_dict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.AgentMetadata.to_dict"><code class="docutils literal notranslate"><span class="pre">AgentMetadata.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.AgentModality"><code class="docutils literal notranslate"><span class="pre">AgentModality</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.AgentRegistry"><code class="docutils literal notranslate"><span class="pre">AgentRegistry</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.AgentRegistry.search"><code class="docutils literal notranslate"><span class="pre">AgentRegistry.search()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.AgentSearcher"><code class="docutils literal notranslate"><span class="pre">AgentSearcher</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.AgentSearcher.search"><code class="docutils literal notranslate"><span class="pre">AgentSearcher.search()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.AutoGenController"><code class="docutils literal notranslate"><span class="pre">AutoGenController</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.AwesomeListSearcher"><code class="docutils literal notranslate"><span class="pre">AwesomeListSearcher</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.AwesomeListSearcher.search"><code class="docutils literal notranslate"><span class="pre">AwesomeListSearcher.search()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.BaseAgentController"><code class="docutils literal notranslate"><span class="pre">BaseAgentController</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.BaseAgentController.ainvoke"><code class="docutils literal notranslate"><span class="pre">BaseAgentController.ainvoke()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.BaseAgentController.from_metadata"><code class="docutils literal notranslate"><span class="pre">BaseAgentController.from_metadata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.BaseAgentController.invoke"><code class="docutils literal notranslate"><span class="pre">BaseAgentController.invoke()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.BaseAgentController.stream"><code class="docutils literal notranslate"><span class="pre">BaseAgentController.stream()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.ControllerConfig"><code class="docutils literal notranslate"><span class="pre">ControllerConfig</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.ControllerConfig.to_dict"><code class="docutils literal notranslate"><span class="pre">ControllerConfig.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.CrewAIController"><code class="docutils literal notranslate"><span class="pre">CrewAIController</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.GenericController"><code class="docutils literal notranslate"><span class="pre">GenericController</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.GenericController.invoke"><code class="docutils literal notranslate"><span class="pre">GenericController.invoke()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.GitHubAgentSearcher"><code class="docutils literal notranslate"><span class="pre">GitHubAgentSearcher</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.GitHubAgentSearcher.search"><code class="docutils literal notranslate"><span class="pre">GitHubAgentSearcher.search()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.HuggingFaceAgentSearcher"><code class="docutils literal notranslate"><span class="pre">HuggingFaceAgentSearcher</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.HuggingFaceAgentSearcher.search"><code class="docutils literal notranslate"><span class="pre">HuggingFaceAgentSearcher.search()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.LangChainController"><code class="docutils literal notranslate"><span class="pre">LangChainController</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.MCPPrompt"><code class="docutils literal notranslate"><span class="pre">MCPPrompt</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.MCPPrompt.to_dict"><code class="docutils literal notranslate"><span class="pre">MCPPrompt.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.MCPResource"><code class="docutils literal notranslate"><span class="pre">MCPResource</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.MCPResource.to_dict"><code class="docutils literal notranslate"><span class="pre">MCPResource.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.MCPServer"><code class="docutils literal notranslate"><span class="pre">MCPServer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.MCPServer.add_prompt"><code class="docutils literal notranslate"><span class="pre">MCPServer.add_prompt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.MCPServer.add_resource"><code class="docutils literal notranslate"><span class="pre">MCPServer.add_resource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.MCPServer.add_tool"><code class="docutils literal notranslate"><span class="pre">MCPServer.add_tool()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.MCPServer.handle_call_tool"><code class="docutils literal notranslate"><span class="pre">MCPServer.handle_call_tool()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.MCPServer.handle_list_prompts"><code class="docutils literal notranslate"><span class="pre">MCPServer.handle_list_prompts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.MCPServer.handle_list_resources"><code class="docutils literal notranslate"><span class="pre">MCPServer.handle_list_resources()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.MCPServer.handle_list_tools"><code class="docutils literal notranslate"><span class="pre">MCPServer.handle_list_tools()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.MCPServer.to_json_rpc_handler"><code class="docutils literal notranslate"><span class="pre">MCPServer.to_json_rpc_handler()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.MCPTool"><code class="docutils literal notranslate"><span class="pre">MCPTool</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ayn.MCPTool.to_dict"><code class="docutils literal notranslate"><span class="pre">MCPTool.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.controller_to_mcp_server"><code class="docutils literal notranslate"><span class="pre">controller_to_mcp_server()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.create_agent_from_registry"><code class="docutils literal notranslate"><span class="pre">create_agent_from_registry()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.export_agent_full_stack"><code class="docutils literal notranslate"><span class="pre">export_agent_full_stack()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.export_as_fastapi"><code class="docutils literal notranslate"><span class="pre">export_as_fastapi()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.export_as_langserve"><code class="docutils literal notranslate"><span class="pre">export_as_langserve()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.generate_chatgpt_action"><code class="docutils literal notranslate"><span class="pre">generate_chatgpt_action()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ayn.generate_claude_mcp_config"><code class="docutils literal notranslate"><span class="pre">generate_claude_mcp_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/actions.html">ayn.actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/actions/chatgpt.html">ayn.actions.chatgpt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/actions/claude.html">ayn.actions.claude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/controllers.html">ayn.controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/controllers/base.html">ayn.controllers.base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/controllers/framework.html">ayn.controllers.framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/controllers/generic.html">ayn.controllers.generic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/core.html">ayn.core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/core/config.html">ayn.core.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/core/models.html">ayn.core.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/export.html">ayn.export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/export/fastapi_export.html">ayn.export.fastapi_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/export/langserve_export.html">ayn.export.langserve_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/mcp.html">ayn.mcp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/mcp/models.html">ayn.mcp.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/mcp/server.html">ayn.mcp.server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/registry.html">ayn.registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/registry/base.html">ayn.registry.base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/registry/searchers.html">ayn.registry.searchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ayn/utils.html">ayn.utils</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ayn</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ayn</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/module_docs/ayn.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ayn">
+<span id="ayn"></span><h1>ayn<a class="headerlink" href="#module-ayn" title="Link to this heading"></a></h1>
+<p>ayn - Agents You Need</p>
+<p>A meta-framework for discovering, installing, and integrating reusable AI agents.
+Acts as the ‘pip + Docker Hub + Postman’ for AI agents.</p>
+<p>Core Features:
+1. Search &amp; Discovery: Find agents across GitHub, HuggingFace, awesome lists
+2. Standard Controller Interface: Parametrizable agent controllers with action methods
+3. HTTP/REST Export: FastAPI and LangServe wrappers
+4. MCP Support: Model Context Protocol server integration
+5. Custom Actions: ChatGPT and Claude action generation</p>
+<p>Architecture:
+- Search layer: Unified registry across multiple sources
+- Controller protocol: Standard interface for invoking agents
+- Export layer: HTTP/REST service generation
+- MCP layer: Tools, resources, and prompts
+- Actions: OpenAPI specs for ChatGPT/Claude</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentRegistry</span><span class="p">,</span> <span class="n">BaseAgentController</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">registry</span> <span class="o">=</span> <span class="n">AgentRegistry</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;data preparation agents&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">agent</span> <span class="o">=</span> <span class="n">BaseAgentController</span><span class="o">.</span><span class="n">from_metadata</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.AgentController">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">AgentController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/controllers/base.html#AgentController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentController" title="Link to this definition"></a></dt>
+<dd><p>Standard protocol for agent controllers</p>
+<p>Controllers provide a uniform interface for invoking agents regardless
+of their underlying framework.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">MyController</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+<span class="gp">... </span>    <span class="k">def</span><span class="w"> </span><span class="nf">invoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Processed: </span><span class="si">{</span><span class="n">input_data</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">controller</span> <span class="o">=</span> <span class="n">MyController</span><span class="p">({</span><span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;gpt-4&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">controller</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="go">&#39;Processed: test&#39;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.AgentController.ainvoke">
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ainvoke</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../_modules/ayn/controllers/base.html#AgentController.ainvoke"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentController.ainvoke" title="Link to this definition"></a></dt>
+<dd><p>Invoke the agent asynchronously</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.AgentController.invoke">
+<span class="sig-name descname"><span class="pre">invoke</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../_modules/ayn/controllers/base.html#AgentController.invoke"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentController.invoke" title="Link to this definition"></a></dt>
+<dd><p>Invoke the agent synchronously</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_data</strong> – Input data for the agent</p></li>
+<li><p><strong>**kwargs</strong> – Additional parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Agent output</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.AgentController.stream">
+<span class="sig-name descname"><span class="pre">stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ayn/controllers/base.html#AgentController.stream"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentController.stream" title="Link to this definition"></a></dt>
+<dd><p>Stream agent outputs</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.AgentFramework">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">AgentFramework</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/core/models.html#AgentFramework"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentFramework" title="Link to this definition"></a></dt>
+<dd><p>Supported agent frameworks</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.AgentMetadata">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">AgentMetadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">framework</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentFramework" title="ayn.core.models.AgentFramework"><span class="pre">AgentFramework</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentModality" title="ayn.core.models.AgentModality"><span class="pre">AgentModality</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">AgentModality.TEXT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'0.1.0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">license</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dependencies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capabilities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/core/models.html#AgentMetadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentMetadata" title="Link to this definition"></a></dt>
+<dd><p>Metadata for an agent</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">AgentMetadata</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;data-prep-agent&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Prepares data for visualization&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">framework</span><span class="o">=</span><span class="n">AgentFramework</span><span class="o">.</span><span class="n">CREWAI</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;data-prep-agent&#39;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.AgentMetadata.from_dict">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a></span></span><a class="reference internal" href="../_modules/ayn/core/models.html#AgentMetadata.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentMetadata.from_dict" title="Link to this definition"></a></dt>
+<dd><p>Create from dictionary</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.AgentMetadata.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ayn/core/models.html#AgentMetadata.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentMetadata.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert to dictionary</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">AgentMetadata</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;test agent&quot;</span><span class="p">,</span> <span class="n">framework</span><span class="o">=</span><span class="n">AgentFramework</span><span class="o">.</span><span class="n">CREWAI</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+<span class="go">&#39;test&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.AgentModality">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">AgentModality</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/core/models.html#AgentModality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentModality" title="Link to this definition"></a></dt>
+<dd><p>Agent modalities</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.AgentRegistry">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">AgentRegistry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">searchers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ayn/registry/searchers.html#ayn.registry.searchers.AgentSearcher" title="ayn.registry.searchers.AgentSearcher"><span class="pre">AgentSearcher</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/registry/base.html#AgentRegistry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentRegistry" title="Link to this definition"></a></dt>
+<dd><p>Unified registry for searching and managing agents</p>
+<p>Aggregates results from multiple sources and provides a dict-like interface.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">registry</span> <span class="o">=</span> <span class="n">AgentRegistry</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Add a local agent</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentMetadata</span><span class="p">,</span> <span class="n">AgentFramework</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">AgentMetadata</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">framework</span><span class="o">=</span><span class="n">AgentFramework</span><span class="o">.</span><span class="n">CUSTOM</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">registry</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">registry</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;test&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;test&#39;</span> <span class="ow">in</span> <span class="n">registry</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.AgentRegistry.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">filters</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ayn/registry/base.html#AgentRegistry.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentRegistry.search" title="Link to this definition"></a></dt>
+<dd><p>Search across all sources</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> – Search query</p></li>
+<li><p><strong>limit</strong> – Max results</p></li>
+<li><p><strong>source</strong> – Specific source to search (github, huggingface, awesome)</p></li>
+<li><p><strong>**filters</strong> – Additional filters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of agent metadata</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">registry</span> <span class="o">=</span> <span class="n">AgentRegistry</span><span class="p">(</span><span class="n">searchers</span><span class="o">=</span><span class="p">[])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Add some test data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentMetadata</span><span class="p">,</span> <span class="n">AgentFramework</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">registry</span><span class="p">[</span><span class="s1">&#39;agent1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">AgentMetadata</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;agent1&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;test agent&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">framework</span><span class="o">=</span><span class="n">AgentFramework</span><span class="o">.</span><span class="n">CREWAI</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;agent&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.AgentSearcher">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">AgentSearcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/registry/searchers.html#AgentSearcher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentSearcher" title="Link to this definition"></a></dt>
+<dd><p>Protocol for agent search implementations</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.AgentSearcher.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">filters</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ayn/registry/searchers.html#AgentSearcher.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AgentSearcher.search" title="Link to this definition"></a></dt>
+<dd><p>Search for agents</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> – Search query string</p></li>
+<li><p><strong>limit</strong> – Maximum results to return</p></li>
+<li><p><strong>**filters</strong> – Additional filters (framework, tags, etc.)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Iterable of agent metadata</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.AutoGenController">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">AutoGenController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/config.html#ayn.core.config.ControllerConfig" title="ayn.core.config.ControllerConfig"><span class="pre">ControllerConfig</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/controllers/framework.html#AutoGenController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AutoGenController" title="Link to this definition"></a></dt>
+<dd><p>Controller for AutoGen agents</p>
+<p>TODO: Implement full AutoGen integration
+See AYN_IMPLEMENTATION_ROADMAP.md for details</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.AwesomeListSearcher">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">AwesomeListSearcher</span></span><a class="reference internal" href="../_modules/ayn/registry/searchers.html#AwesomeListSearcher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AwesomeListSearcher" title="Link to this definition"></a></dt>
+<dd><p>Parse and search awesome lists for agents</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">searcher</span> <span class="o">=</span> <span class="n">AwesomeListSearcher</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">searcher</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;autogen&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.AwesomeListSearcher.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">filters</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ayn/registry/searchers.html#AwesomeListSearcher.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.AwesomeListSearcher.search" title="Link to this definition"></a></dt>
+<dd><p>Search awesome lists</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.BaseAgentController">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">BaseAgentController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/config.html#ayn.core.config.ControllerConfig" title="ayn.core.config.ControllerConfig"><span class="pre">ControllerConfig</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/controllers/base.html#BaseAgentController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.BaseAgentController" title="Link to this definition"></a></dt>
+<dd><p>Base class for agent controllers</p>
+<p>Provides common functionality and enforces the controller protocol.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">SimpleController</span><span class="p">(</span><span class="n">BaseAgentController</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span><span class="w"> </span><span class="nf">invoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Result: </span><span class="si">{</span><span class="n">input_data</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">controller</span> <span class="o">=</span> <span class="n">SimpleController</span><span class="p">(</span><span class="n">ControllerConfig</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">controller</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="go">&#39;Result: test&#39;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.BaseAgentController.ainvoke">
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ainvoke</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../_modules/ayn/controllers/base.html#BaseAgentController.ainvoke"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.BaseAgentController.ainvoke" title="Link to this definition"></a></dt>
+<dd><p>Default async implementation wraps synchronous invoke</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.BaseAgentController.from_metadata">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/config.html#ayn.core.config.ControllerConfig" title="ayn.core.config.ControllerConfig"><span class="pre">ControllerConfig</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="ayn/controllers/base.html#ayn.controllers.base.BaseAgentController" title="ayn.controllers.base.BaseAgentController"><span class="pre">BaseAgentController</span></a></span></span><a class="reference internal" href="../_modules/ayn/controllers/base.html#BaseAgentController.from_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.BaseAgentController.from_metadata" title="Link to this definition"></a></dt>
+<dd><p>Factory method to create controller from metadata</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.BaseAgentController.invoke">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">invoke</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../_modules/ayn/controllers/base.html#BaseAgentController.invoke"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.BaseAgentController.invoke" title="Link to this definition"></a></dt>
+<dd><p>Invoke the agent - must be implemented by subclasses</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.BaseAgentController.stream">
+<span class="sig-name descname"><span class="pre">stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ayn/controllers/base.html#BaseAgentController.stream"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.BaseAgentController.stream" title="Link to this definition"></a></dt>
+<dd><p>Default streaming yields single result</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.ControllerConfig">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">ControllerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'gpt-4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retry_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/core/config.html#ControllerConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.ControllerConfig" title="Link to this definition"></a></dt>
+<dd><p>Configuration for agent controllers</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="n">ControllerConfig</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">1000</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">model</span>
+<span class="go">&#39;gpt-4&#39;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.ControllerConfig.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ayn/core/config.html#ControllerConfig.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.ControllerConfig.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert to dictionary</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.CrewAIController">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">CrewAIController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/config.html#ayn.core.config.ControllerConfig" title="ayn.core.config.ControllerConfig"><span class="pre">ControllerConfig</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/controllers/framework.html#CrewAIController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.CrewAIController" title="Link to this definition"></a></dt>
+<dd><p>Controller for CrewAI agents</p>
+<p>TODO: Implement full CrewAI integration
+See AYN_IMPLEMENTATION_ROADMAP.md for details</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.GenericController">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">GenericController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/config.html#ayn.core.config.ControllerConfig" title="ayn.core.config.ControllerConfig"><span class="pre">ControllerConfig</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/controllers/generic.html#GenericController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.GenericController" title="Link to this definition"></a></dt>
+<dd><p>Generic controller for custom agents</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentMetadata</span><span class="p">,</span> <span class="n">AgentFramework</span><span class="p">,</span> <span class="n">ControllerConfig</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">AgentMetadata</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">framework</span><span class="o">=</span><span class="n">AgentFramework</span><span class="o">.</span><span class="n">CUSTOM</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">controller</span> <span class="o">=</span> <span class="n">GenericController</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">ControllerConfig</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">controller</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s1">&#39;input&#39;</span><span class="p">:</span> <span class="s1">&#39;test&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.GenericController.invoke">
+<span class="sig-name descname"><span class="pre">invoke</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../_modules/ayn/controllers/generic.html#GenericController.invoke"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.GenericController.invoke" title="Link to this definition"></a></dt>
+<dd><p>Generic invoke - subclasses override for specific behavior</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.GitHubAgentSearcher">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">GitHubAgentSearcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">github_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/registry/searchers.html#GitHubAgentSearcher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.GitHubAgentSearcher" title="Link to this definition"></a></dt>
+<dd><p>Search for agents in GitHub repositories</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">searcher</span> <span class="o">=</span> <span class="n">GitHubAgentSearcher</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">searcher</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;crewai agent&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.GitHubAgentSearcher.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">filters</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ayn/registry/searchers.html#GitHubAgentSearcher.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.GitHubAgentSearcher.search" title="Link to this definition"></a></dt>
+<dd><p>Search GitHub for agent repos</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.HuggingFaceAgentSearcher">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">HuggingFaceAgentSearcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hf_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/registry/searchers.html#HuggingFaceAgentSearcher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.HuggingFaceAgentSearcher" title="Link to this definition"></a></dt>
+<dd><p>Search for agents on Hugging Face</p>
+<p>Uses the Hugging Face MCP tool if available.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">searcher</span> <span class="o">=</span> <span class="n">HuggingFaceAgentSearcher</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">searcher</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;code generation&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.HuggingFaceAgentSearcher.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">filters</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ayn/registry/searchers.html#HuggingFaceAgentSearcher.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.HuggingFaceAgentSearcher.search" title="Link to this definition"></a></dt>
+<dd><p>Search Hugging Face for agents</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.LangChainController">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">LangChainController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/config.html#ayn.core.config.ControllerConfig" title="ayn.core.config.ControllerConfig"><span class="pre">ControllerConfig</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/controllers/framework.html#LangChainController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.LangChainController" title="Link to this definition"></a></dt>
+<dd><p>Controller for LangChain agents</p>
+<p>TODO: Implement full LangChain integration
+See AYN_IMPLEMENTATION_ROADMAP.md for details</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.MCPPrompt">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">MCPPrompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/mcp/models.html#MCPPrompt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPPrompt" title="Link to this definition"></a></dt>
+<dd><p>MCP prompt template</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prompt</span> <span class="o">=</span> <span class="n">MCPPrompt</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;summarize&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Summarize text&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">arguments</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Text to summarize&quot;</span><span class="p">,</span> <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prompt</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;summarize&#39;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.MCPPrompt.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ayn/mcp/models.html#MCPPrompt.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPPrompt.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert to MCP prompt format</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.MCPResource">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">MCPResource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mimeType</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'text/plain'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/mcp/models.html#MCPResource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPResource" title="Link to this definition"></a></dt>
+<dd><p>MCP resource definition</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">resource</span> <span class="o">=</span> <span class="n">MCPResource</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">uri</span><span class="o">=</span><span class="s2">&quot;file:///data.csv&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Dataset&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">mimeType</span><span class="o">=</span><span class="s2">&quot;text/csv&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">resource</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Dataset&#39;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.MCPResource.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ayn/mcp/models.html#MCPResource.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPResource.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert to MCP resource format</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.MCPServer">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">MCPServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'1.0.0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/controllers/base.html#ayn.controllers.base.AgentController" title="ayn.controllers.base.AgentController"><span class="pre">AgentController</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/mcp/server.html#MCPServer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPServer" title="Link to this definition"></a></dt>
+<dd><p>MCP Server implementation</p>
+<p>Exposes agent capabilities via Model Context Protocol.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">MCPServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test-server&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tool</span> <span class="o">=</span> <span class="n">MCPTool</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;greet&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Greet user&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">input_schema</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{}}</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span><span class="o">.</span><span class="n">add_tool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">tools</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.MCPServer.add_prompt">
+<span class="sig-name descname"><span class="pre">add_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/mcp/models.html#ayn.mcp.models.MCPPrompt" title="ayn.mcp.models.MCPPrompt"><span class="pre">MCPPrompt</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/mcp/server.html#MCPServer.add_prompt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPServer.add_prompt" title="Link to this definition"></a></dt>
+<dd><p>Add a prompt to the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.MCPServer.add_resource">
+<span class="sig-name descname"><span class="pre">add_resource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/mcp/models.html#ayn.mcp.models.MCPResource" title="ayn.mcp.models.MCPResource"><span class="pre">MCPResource</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/mcp/server.html#MCPServer.add_resource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPServer.add_resource" title="Link to this definition"></a></dt>
+<dd><p>Add a resource to the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.MCPServer.add_tool">
+<span class="sig-name descname"><span class="pre">add_tool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tool</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/mcp/models.html#ayn.mcp.models.MCPTool" title="ayn.mcp.models.MCPTool"><span class="pre">MCPTool</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/mcp/server.html#MCPServer.add_tool"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPServer.add_tool" title="Link to this definition"></a></dt>
+<dd><p>Add a tool to the server</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">MCPServer</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tool</span> <span class="o">=</span> <span class="n">MCPTool</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;test tool&quot;</span><span class="p">,</span> <span class="p">{})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span><span class="o">.</span><span class="n">add_tool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span><span class="o">.</span><span class="n">tools</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;test&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.MCPServer.handle_call_tool">
+<span class="sig-name descname"><span class="pre">handle_call_tool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tool_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ayn/mcp/server.html#MCPServer.handle_call_tool"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPServer.handle_call_tool" title="Link to this definition"></a></dt>
+<dd><p>Handle tools/call request</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.MCPServer.handle_list_prompts">
+<span class="sig-name descname"><span class="pre">handle_list_prompts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ayn/mcp/server.html#MCPServer.handle_list_prompts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPServer.handle_list_prompts" title="Link to this definition"></a></dt>
+<dd><p>Handle prompts/list request</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.MCPServer.handle_list_resources">
+<span class="sig-name descname"><span class="pre">handle_list_resources</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ayn/mcp/server.html#MCPServer.handle_list_resources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPServer.handle_list_resources" title="Link to this definition"></a></dt>
+<dd><p>Handle resources/list request</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.MCPServer.handle_list_tools">
+<span class="sig-name descname"><span class="pre">handle_list_tools</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ayn/mcp/server.html#MCPServer.handle_list_tools"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPServer.handle_list_tools" title="Link to this definition"></a></dt>
+<dd><p>Handle tools/list request</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.MCPServer.to_json_rpc_handler">
+<span class="sig-name descname"><span class="pre">to_json_rpc_handler</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Callable</span></span></span><a class="reference internal" href="../_modules/ayn/mcp/server.html#MCPServer.to_json_rpc_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPServer.to_json_rpc_handler" title="Link to this definition"></a></dt>
+<dd><p>Create a JSON-RPC handler for MCP protocol</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Handler function that processes JSON-RPC requests</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ayn.MCPTool">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">MCPTool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_schema</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/mcp/models.html#MCPTool"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPTool" title="Link to this definition"></a></dt>
+<dd><p>MCP tool definition</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tool</span> <span class="o">=</span> <span class="n">MCPTool</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;search&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Search for information&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">input_schema</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}}}</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tool</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;search&#39;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ayn.MCPTool.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ayn/mcp/models.html#MCPTool.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.MCPTool.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert to MCP tool format</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ayn.controller_to_mcp_server">
+<span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">controller_to_mcp_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/controllers/base.html#ayn.controllers.base.AgentController" title="ayn.controllers.base.AgentController"><span class="pre">AgentController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">tools</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ayn/mcp/models.html#ayn.mcp.models.MCPTool" title="ayn.mcp.models.MCPTool"><span class="pre">MCPTool</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ayn/mcp/models.html#ayn.mcp.models.MCPResource" title="ayn.mcp.models.MCPResource"><span class="pre">MCPResource</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ayn/mcp/models.html#ayn.mcp.models.MCPPrompt" title="ayn.mcp.models.MCPPrompt"><span class="pre">MCPPrompt</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="ayn/mcp/server.html#ayn.mcp.server.MCPServer" title="ayn.mcp.server.MCPServer"><span class="pre">MCPServer</span></a></span></span><a class="reference internal" href="../_modules/ayn/mcp/server.html#controller_to_mcp_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.controller_to_mcp_server" title="Link to this definition"></a></dt>
+<dd><p>Convert an agent controller to MCP server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controller</strong> – Agent controller</p></li>
+<li><p><strong>metadata</strong> – Agent metadata</p></li>
+<li><p><strong>tools</strong> – Optional tools to expose</p></li>
+<li><p><strong>resources</strong> – Optional resources to expose</p></li>
+<li><p><strong>prompts</strong> – Optional prompts to expose</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>MCP server instance</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn.controllers</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericController</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentMetadata</span><span class="p">,</span> <span class="n">AgentFramework</span><span class="p">,</span> <span class="n">ControllerConfig</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">AgentMetadata</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">framework</span><span class="o">=</span><span class="n">AgentFramework</span><span class="o">.</span><span class="n">CUSTOM</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">controller</span> <span class="o">=</span> <span class="n">GenericController</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">ControllerConfig</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">controller_to_mcp_server</span><span class="p">(</span><span class="n">controller</span><span class="p">,</span> <span class="n">meta</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;test&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ayn.create_agent_from_registry">
+<span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">create_agent_from_registry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registry</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/registry/base.html#ayn.registry.base.AgentRegistry" title="ayn.registry.base.AgentRegistry"><span class="pre">AgentRegistry</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/config.html#ayn.core.config.ControllerConfig" title="ayn.core.config.ControllerConfig"><span class="pre">ControllerConfig</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="ayn/controllers/base.html#ayn.controllers.base.BaseAgentController" title="ayn.controllers.base.BaseAgentController"><span class="pre">BaseAgentController</span></a></span></span><a class="reference internal" href="../_modules/ayn/utils.html#create_agent_from_registry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.create_agent_from_registry" title="Link to this definition"></a></dt>
+<dd><p>Search registry and create agent controller</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>registry</strong> – Agent registry</p></li>
+<li><p><strong>query</strong> – Search query</p></li>
+<li><p><strong>config</strong> – Optional controller config</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Agent controller</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentRegistry</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentMetadata</span><span class="p">,</span> <span class="n">AgentFramework</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">registry</span> <span class="o">=</span> <span class="n">AgentRegistry</span><span class="p">(</span><span class="n">searchers</span><span class="o">=</span><span class="p">[])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">AgentMetadata</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test-agent&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">framework</span><span class="o">=</span><span class="n">AgentFramework</span><span class="o">.</span><span class="n">CUSTOM</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">registry</span><span class="p">[</span><span class="s1">&#39;test-agent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">controller</span> <span class="o">=</span> <span class="n">create_agent_from_registry</span><span class="p">(</span><span class="n">registry</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">controller</span><span class="p">,</span> <span class="n">BaseAgentController</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ayn.export_agent_full_stack">
+<span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">export_agent_full_stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/controllers/base.html#ayn.controllers.base.AgentController" title="ayn.controllers.base.AgentController"><span class="pre">AgentController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'0.0.0.0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_fastapi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_mcp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_chatgpt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mcp_tools</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ayn/mcp/models.html#ayn.mcp.models.MCPTool" title="ayn.mcp.models.MCPTool"><span class="pre">MCPTool</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ayn/utils.html#export_agent_full_stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.export_agent_full_stack" title="Link to this definition"></a></dt>
+<dd><p>Export agent with all integrations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controller</strong> – Agent controller</p></li>
+<li><p><strong>metadata</strong> – Agent metadata</p></li>
+<li><p><strong>api_host</strong> – API host</p></li>
+<li><p><strong>api_port</strong> – API port</p></li>
+<li><p><strong>export_fastapi</strong> – Whether to export as FastAPI</p></li>
+<li><p><strong>export_mcp</strong> – Whether to export as MCP server</p></li>
+<li><p><strong>export_chatgpt</strong> – Whether to generate ChatGPT action</p></li>
+<li><p><strong>mcp_tools</strong> – Optional MCP tools</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict with export artifacts</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn.controllers</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericController</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentMetadata</span><span class="p">,</span> <span class="n">AgentFramework</span><span class="p">,</span> <span class="n">ControllerConfig</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">AgentMetadata</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">framework</span><span class="o">=</span><span class="n">AgentFramework</span><span class="o">.</span><span class="n">CUSTOM</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">controller</span> <span class="o">=</span> <span class="n">GenericController</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">ControllerConfig</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">artifacts</span> <span class="o">=</span> <span class="n">export_agent_full_stack</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">controller</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">export_fastapi</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">export_mcp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">export_chatgpt</span><span class="o">=</span><span class="kc">True</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;chatgpt_action&#39;</span> <span class="ow">in</span> <span class="n">artifacts</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ayn.export_as_fastapi">
+<span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">export_as_fastapi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/controllers/base.html#ayn.controllers.base.AgentController" title="ayn.controllers.base.AgentController"><span class="pre">AgentController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'0.0.0.0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ayn/export/fastapi_export.html#export_as_fastapi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.export_as_fastapi" title="Link to this definition"></a></dt>
+<dd><p>Export agent controller as FastAPI service</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controller</strong> – Agent controller</p></li>
+<li><p><strong>metadata</strong> – Optional agent metadata</p></li>
+<li><p><strong>host</strong> – Host to bind to</p></li>
+<li><p><strong>port</strong> – Port to bind to</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># This would start a server - doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">controller</span> <span class="o">=</span> <span class="n">GenericController</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">export_as_fastapi</span><span class="p">(</span><span class="n">controller</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ayn.export_as_langserve">
+<span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">export_as_langserve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/controllers/base.html#ayn.controllers.base.AgentController" title="ayn.controllers.base.AgentController"><span class="pre">AgentController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../_modules/ayn/export/langserve_export.html#export_as_langserve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.export_as_langserve" title="Link to this definition"></a></dt>
+<dd><p>Export agent as LangServe compatible service</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controller</strong> – Agent controller</p></li>
+<li><p><strong>metadata</strong> – Optional agent metadata</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>LangServe app</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Requires langserve - doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">controller</span> <span class="o">=</span> <span class="n">GenericController</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">app</span> <span class="o">=</span> <span class="n">export_as_langserve</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ayn.generate_chatgpt_action">
+<span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">generate_chatgpt_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/controllers/base.html#ayn.controllers.base.AgentController" title="ayn.controllers.base.AgentController"><span class="pre">AgentController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/core/models.html#ayn.core.models.AgentMetadata" title="ayn.core.models.AgentMetadata"><span class="pre">AgentMetadata</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ayn/actions/chatgpt.html#generate_chatgpt_action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.generate_chatgpt_action" title="Link to this definition"></a></dt>
+<dd><p>Generate ChatGPT custom action configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controller</strong> – Agent controller</p></li>
+<li><p><strong>metadata</strong> – Agent metadata</p></li>
+<li><p><strong>api_url</strong> – Base URL for the API</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>ChatGPT action configuration</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn.controllers</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericController</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentMetadata</span><span class="p">,</span> <span class="n">AgentFramework</span><span class="p">,</span> <span class="n">ControllerConfig</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">AgentMetadata</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">framework</span><span class="o">=</span><span class="n">AgentFramework</span><span class="o">.</span><span class="n">CUSTOM</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">controller</span> <span class="o">=</span> <span class="n">GenericController</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">ControllerConfig</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">action</span> <span class="o">=</span> <span class="n">generate_chatgpt_action</span><span class="p">(</span><span class="n">controller</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="s2">&quot;https://api.example.com&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">action</span><span class="p">[</span><span class="s1">&#39;schema&#39;</span><span class="p">][</span><span class="s1">&#39;info&#39;</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+<span class="go">&#39;test&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ayn.generate_claude_mcp_config">
+<span class="sig-prename descclassname"><span class="pre">ayn.</span></span><span class="sig-name descname"><span class="pre">generate_claude_mcp_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mcp_server</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ayn/mcp/server.html#ayn.mcp.server.MCPServer" title="ayn.mcp.server.MCPServer"><span class="pre">MCPServer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transport</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'sse'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ayn/actions/claude.html#generate_claude_mcp_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ayn.generate_claude_mcp_config" title="Link to this definition"></a></dt>
+<dd><p>Generate Claude Desktop MCP configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mcp_server</strong> – MCP server instance</p></li>
+<li><p><strong>server_url</strong> – URL where MCP server is hosted</p></li>
+<li><p><strong>transport</strong> – Transport type (sse, stdio)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Claude Desktop MCP config</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ayn.mcp</span><span class="w"> </span><span class="kn">import</span> <span class="n">MCPServer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">MCPServer</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="n">generate_claude_mcp_config</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="s2">&quot;http://localhost:8000&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;mcpServers&#39;</span><span class="p">][</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+<span class="go">&#39;http://localhost:8000/sse&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to ayn’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ayn/actions.html" class="btn btn-neutral float-right" title="ayn.actions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright NO COPYRIGHT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

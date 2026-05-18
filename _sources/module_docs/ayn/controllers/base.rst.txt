@@ -1,0 +1,4 @@
+ayn.controllers.base
+====================
+.. automodule:: ayn.controllers.base
+   :members:

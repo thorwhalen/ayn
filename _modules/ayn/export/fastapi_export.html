@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ayn.export.fastapi_export &mdash; ayn 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ayn
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn.html">ayn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/actions.html">ayn.actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/actions/chatgpt.html">ayn.actions.chatgpt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/actions/claude.html">ayn.actions.claude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/controllers.html">ayn.controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/controllers/base.html">ayn.controllers.base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/controllers/framework.html">ayn.controllers.framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/controllers/generic.html">ayn.controllers.generic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/core.html">ayn.core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/core/config.html">ayn.core.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/core/models.html">ayn.core.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/export.html">ayn.export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/export/fastapi_export.html">ayn.export.fastapi_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/export/langserve_export.html">ayn.export.langserve_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/mcp.html">ayn.mcp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/mcp/models.html">ayn.mcp.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/mcp/server.html">ayn.mcp.server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/registry.html">ayn.registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/registry/base.html">ayn.registry.base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/registry/searchers.html">ayn.registry.searchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/utils.html">ayn.utils</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ayn</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">ayn.export.fastapi_export</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for ayn.export.fastapi_export</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;FastAPI export functionality.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..controllers.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentController</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..core.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentMetadata</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_create_fastapi_app</span><span class="p">(</span>
+    <span class="n">controller</span><span class="p">:</span> <span class="n">AgentController</span><span class="p">,</span> <span class="n">metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AgentMetadata</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a FastAPI app wrapping an agent controller</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        controller: Agent controller instance</span>
+<span class="sd">        metadata: Optional agent metadata for docs</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        FastAPI app instance</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; from ayn.controllers import GenericController</span>
+<span class="sd">        &gt;&gt;&gt; from ayn.core import ControllerConfig, AgentMetadata, AgentFramework</span>
+<span class="sd">        &gt;&gt;&gt; meta = AgentMetadata(name=&quot;test&quot;, description=&quot;test&quot;, framework=AgentFramework.CUSTOM)</span>
+<span class="sd">        &gt;&gt;&gt; controller = GenericController(meta, ControllerConfig())</span>
+<span class="sd">        &gt;&gt;&gt; app = _create_fastapi_app(controller, meta)  # doctest: +SKIP</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">fastapi.responses</span><span class="w"> </span><span class="kn">import</span> <span class="n">JSONResponse</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;FastAPI is required: pip install fastapi uvicorn&quot;</span><span class="p">)</span>
+
+    <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">metadata</span><span class="o">.</span><span class="n">name</span> <span class="k">if</span> <span class="n">metadata</span> <span class="k">else</span> <span class="s2">&quot;Agent API&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="n">metadata</span><span class="o">.</span><span class="n">description</span> <span class="k">if</span> <span class="n">metadata</span> <span class="k">else</span> <span class="s2">&quot;AI Agent API&quot;</span><span class="p">,</span>
+        <span class="n">version</span><span class="o">=</span><span class="n">metadata</span><span class="o">.</span><span class="n">version</span> <span class="k">if</span> <span class="n">metadata</span> <span class="k">else</span> <span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">InvokeRequest</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+        <span class="n">input_data</span><span class="p">:</span> <span class="n">Any</span>
+        <span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/invoke&quot;</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">invoke_endpoint</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">InvokeRequest</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Invoke the agent&quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">controller</span><span class="o">.</span><span class="n">ainvoke</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">input_data</span><span class="p">,</span> <span class="o">**</span><span class="n">request</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">JSONResponse</span><span class="p">({</span><span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">})</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/stream&quot;</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stream_endpoint</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">InvokeRequest</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Stream agent outputs&quot;&quot;&quot;</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">fastapi.responses</span><span class="w"> </span><span class="kn">import</span> <span class="n">StreamingResponse</span>
+
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">generate</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">controller</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">input_data</span><span class="p">,</span> <span class="o">**</span><span class="n">request</span><span class="o">.</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&quot;chunk&quot;</span><span class="p">:</span> <span class="n">chunk</span><span class="p">})</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+        <span class="k">return</span> <span class="n">StreamingResponse</span><span class="p">(</span><span class="n">generate</span><span class="p">(),</span> <span class="n">media_type</span><span class="o">=</span><span class="s2">&quot;application/x-ndjson&quot;</span><span class="p">)</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/health&quot;</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">health</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Health check&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;healthy&quot;</span><span class="p">}</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/metadata&quot;</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_metadata</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get agent metadata&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">metadata</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;No metadata available&quot;</span><span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">app</span>
+
+
+<div class="viewcode-block" id="export_as_fastapi">
+<a class="viewcode-back" href="../../../module_docs/ayn/export/fastapi_export.html#ayn.export_as_fastapi">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">export_as_fastapi</span><span class="p">(</span>
+    <span class="n">controller</span><span class="p">:</span> <span class="n">AgentController</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AgentMetadata</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">host</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">8000</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Export agent controller as FastAPI service</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        controller: Agent controller</span>
+<span class="sd">        metadata: Optional agent metadata</span>
+<span class="sd">        host: Host to bind to</span>
+<span class="sd">        port: Port to bind to</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; # This would start a server - doctest: +SKIP</span>
+<span class="sd">        &gt;&gt;&gt; controller = GenericController(...)  # doctest: +SKIP</span>
+<span class="sd">        &gt;&gt;&gt; export_as_fastapi(controller, port=8080)  # doctest: +SKIP</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">_create_fastapi_app</span><span class="p">(</span><span class="n">controller</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">uvicorn</span>
+
+        <span class="n">uvicorn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;uvicorn is required: pip install uvicorn&quot;</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright NO COPYRIGHT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

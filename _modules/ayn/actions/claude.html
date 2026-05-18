@@ -1,0 +1,177 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ayn.actions.claude &mdash; ayn 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ayn
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn.html">ayn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/actions.html">ayn.actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/actions/chatgpt.html">ayn.actions.chatgpt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/actions/claude.html">ayn.actions.claude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/controllers.html">ayn.controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/controllers/base.html">ayn.controllers.base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/controllers/framework.html">ayn.controllers.framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/controllers/generic.html">ayn.controllers.generic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/core.html">ayn.core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/core/config.html">ayn.core.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/core/models.html">ayn.core.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/export.html">ayn.export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/export/fastapi_export.html">ayn.export.fastapi_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/export/langserve_export.html">ayn.export.langserve_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/mcp.html">ayn.mcp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/mcp/models.html">ayn.mcp.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/mcp/server.html">ayn.mcp.server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/registry.html">ayn.registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/registry/base.html">ayn.registry.base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/registry/searchers.html">ayn.registry.searchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/utils.html">ayn.utils</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ayn</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">ayn.actions.claude</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for ayn.actions.claude</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Claude Desktop MCP configuration generation.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..mcp.server</span><span class="w"> </span><span class="kn">import</span> <span class="n">MCPServer</span>
+
+
+<div class="viewcode-block" id="generate_claude_mcp_config">
+<a class="viewcode-back" href="../../../module_docs/ayn/actions/claude.html#ayn.generate_claude_mcp_config">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_claude_mcp_config</span><span class="p">(</span>
+    <span class="n">mcp_server</span><span class="p">:</span> <span class="n">MCPServer</span><span class="p">,</span> <span class="n">server_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">transport</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;sse&quot;</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate Claude Desktop MCP configuration</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        mcp_server: MCP server instance</span>
+<span class="sd">        server_url: URL where MCP server is hosted</span>
+<span class="sd">        transport: Transport type (sse, stdio)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Claude Desktop MCP config</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; from ayn.mcp import MCPServer</span>
+<span class="sd">        &gt;&gt;&gt; server = MCPServer(&quot;test&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; config = generate_claude_mcp_config(server, &quot;http://localhost:8000&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; config[&#39;mcpServers&#39;][&#39;test&#39;][&#39;url&#39;]</span>
+<span class="sd">        &#39;http://localhost:8000/sse&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">transport</span> <span class="o">==</span> <span class="s2">&quot;sse&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;mcpServers&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="n">mcp_server</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">server_url</span><span class="si">}</span><span class="s2">/sse&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;transport&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sse&quot;</span><span class="p">},</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="k">elif</span> <span class="n">transport</span> <span class="o">==</span> <span class="s2">&quot;stdio&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;mcpServers&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="n">mcp_server</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;mcp_server&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;transport&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;stdio&quot;</span><span class="p">},</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported transport: </span><span class="si">{</span><span class="n">transport</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright NO COPYRIGHT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

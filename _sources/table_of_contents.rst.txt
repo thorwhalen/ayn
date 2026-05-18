@@ -1,0 +1,25 @@
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   module_docs/ayn
+   module_docs/ayn/actions
+   module_docs/ayn/actions/chatgpt
+   module_docs/ayn/actions/claude
+   module_docs/ayn/controllers
+   module_docs/ayn/controllers/base
+   module_docs/ayn/controllers/framework
+   module_docs/ayn/controllers/generic
+   module_docs/ayn/core
+   module_docs/ayn/core/config
+   module_docs/ayn/core/models
+   module_docs/ayn/export
+   module_docs/ayn/export/fastapi_export
+   module_docs/ayn/export/langserve_export
+   module_docs/ayn/mcp
+   module_docs/ayn/mcp/models
+   module_docs/ayn/mcp/server
+   module_docs/ayn/registry
+   module_docs/ayn/registry/base
+   module_docs/ayn/registry/searchers
+   module_docs/ayn/utils

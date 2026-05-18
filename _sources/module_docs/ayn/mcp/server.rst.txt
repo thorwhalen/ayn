@@ -1,0 +1,4 @@
+ayn.mcp.server
+==============
+.. automodule:: ayn.mcp.server
+   :members:

@@ -1,0 +1,253 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ayn.registry.searchers &mdash; ayn 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ayn
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn.html">ayn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/actions.html">ayn.actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/actions/chatgpt.html">ayn.actions.chatgpt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/actions/claude.html">ayn.actions.claude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/controllers.html">ayn.controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/controllers/base.html">ayn.controllers.base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/controllers/framework.html">ayn.controllers.framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/controllers/generic.html">ayn.controllers.generic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/core.html">ayn.core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/core/config.html">ayn.core.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/core/models.html">ayn.core.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/export.html">ayn.export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/export/fastapi_export.html">ayn.export.fastapi_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/export/langserve_export.html">ayn.export.langserve_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/mcp.html">ayn.mcp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/mcp/models.html">ayn.mcp.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/mcp/server.html">ayn.mcp.server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/registry.html">ayn.registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/registry/base.html">ayn.registry.base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/registry/searchers.html">ayn.registry.searchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module_docs/ayn/utils.html">ayn.utils</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ayn</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">ayn.registry.searchers</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for ayn.registry.searchers</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Agent searcher implementations.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Protocol</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..core.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentMetadata</span>
+
+
+<div class="viewcode-block" id="AgentSearcher">
+<a class="viewcode-back" href="../../../module_docs/ayn/registry/searchers.html#ayn.AgentSearcher">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AgentSearcher</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Protocol for agent search implementations&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AgentSearcher.search">
+<a class="viewcode-back" href="../../../module_docs/ayn/registry/searchers.html#ayn.AgentSearcher.search">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="o">**</span><span class="n">filters</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">AgentMetadata</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Search for agents</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            query: Search query string</span>
+<span class="sd">            limit: Maximum results to return</span>
+<span class="sd">            **filters: Additional filters (framework, tags, etc.)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Iterable of agent metadata</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="o">...</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="GitHubAgentSearcher">
+<a class="viewcode-back" href="../../../module_docs/ayn/registry/searchers.html#ayn.GitHubAgentSearcher">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">GitHubAgentSearcher</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Search for agents in GitHub repositories</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; searcher = GitHubAgentSearcher()  # doctest: +SKIP</span>
+<span class="sd">        &gt;&gt;&gt; results = searcher.search(&#39;crewai agent&#39;)  # doctest: +SKIP</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">github_token</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">github_token</span> <span class="o">=</span> <span class="n">github_token</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;GITHUB_TOKEN&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GitHubAgentSearcher.search">
+<a class="viewcode-back" href="../../../module_docs/ayn/registry/searchers.html#ayn.GitHubAgentSearcher.search">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="o">**</span><span class="n">filters</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">AgentMetadata</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Search GitHub for agent repos&quot;&quot;&quot;</span>
+        <span class="c1"># Simplified implementation - real version would use GitHub API</span>
+        <span class="c1"># TODO: Implement actual GitHub API search</span>
+        <span class="n">framework_filter</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;framework&quot;</span><span class="p">)</span>
+        <span class="n">search_terms</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2"> agent&quot;</span>
+        <span class="k">if</span> <span class="n">framework_filter</span><span class="p">:</span>
+            <span class="n">search_terms</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">framework_filter</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="c1"># Placeholder - would normally make API calls</span>
+        <span class="k">return</span> <span class="p">[]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="HuggingFaceAgentSearcher">
+<a class="viewcode-back" href="../../../module_docs/ayn/registry/searchers.html#ayn.HuggingFaceAgentSearcher">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HuggingFaceAgentSearcher</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Search for agents on Hugging Face</span>
+
+<span class="sd">    Uses the Hugging Face MCP tool if available.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; searcher = HuggingFaceAgentSearcher()  # doctest: +SKIP</span>
+<span class="sd">        &gt;&gt;&gt; results = searcher.search(&#39;code generation&#39;)  # doctest: +SKIP</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hf_token</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hf_token</span> <span class="o">=</span> <span class="n">hf_token</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;HF_TOKEN&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HuggingFaceAgentSearcher.search">
+<a class="viewcode-back" href="../../../module_docs/ayn/registry/searchers.html#ayn.HuggingFaceAgentSearcher.search">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="o">**</span><span class="n">filters</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">AgentMetadata</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Search Hugging Face for agents&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Try to use HuggingFace MCP tools if available</span>
+            <span class="c1"># This would integrate with the HF tools we have access to</span>
+            <span class="k">pass</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">return</span> <span class="p">[]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AwesomeListSearcher">
+<a class="viewcode-back" href="../../../module_docs/ayn/registry/searchers.html#ayn.AwesomeListSearcher">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AwesomeListSearcher</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse and search awesome lists for agents</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; searcher = AwesomeListSearcher()  # doctest: +SKIP</span>
+<span class="sd">        &gt;&gt;&gt; results = searcher.search(&#39;autogen&#39;)  # doctest: +SKIP</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">AWESOME_LISTS</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;https://github.com/e2b-dev/awesome-ai-agents&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;https://github.com/kyrolabs/awesome-agentic-ai&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;https://github.com/Exponential-ML/awesome-open-source-ai-agents&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+<div class="viewcode-block" id="AwesomeListSearcher.search">
+<a class="viewcode-back" href="../../../module_docs/ayn/registry/searchers.html#ayn.AwesomeListSearcher.search">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="o">**</span><span class="n">filters</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">AgentMetadata</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Search awesome lists&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: Implement markdown parsing and search</span>
+        <span class="c1"># Would use graze to download and cache the markdown files</span>
+        <span class="k">return</span> <span class="p">[]</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright NO COPYRIGHT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

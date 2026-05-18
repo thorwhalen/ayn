@@ -1,0 +1,4 @@
+ayn.registry.searchers
+======================
+.. automodule:: ayn.registry.searchers
+   :members:
