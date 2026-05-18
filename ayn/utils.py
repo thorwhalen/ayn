@@ -93,13 +93,9 @@ def export_agent_full_stack(
         artifacts["api_url"] = api_url
 
     if export_mcp:
-        mcp_server = controller_to_mcp_server(
-            controller, metadata, tools=mcp_tools
-        )
+        mcp_server = controller_to_mcp_server(controller, metadata, tools=mcp_tools)
         artifacts["mcp_server"] = mcp_server
-        artifacts["claude_config"] = generate_claude_mcp_config(
-            mcp_server, api_url
-        )
+        artifacts["claude_config"] = generate_claude_mcp_config(mcp_server, api_url)
 
     if export_chatgpt:
         artifacts["chatgpt_action"] = generate_chatgpt_action(

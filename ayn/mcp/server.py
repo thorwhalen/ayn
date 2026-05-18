@@ -158,7 +158,9 @@ def controller_to_mcp_server(
         >>> server.name
         'test'
     """
-    server = MCPServer(name=metadata.name, version=metadata.version, controller=controller)
+    server = MCPServer(
+        name=metadata.name, version=metadata.version, controller=controller
+    )
 
     # Add default invoke tool
     default_tool = MCPTool(
@@ -166,7 +168,9 @@ def controller_to_mcp_server(
         description=metadata.description,
         input_schema={
             "type": "object",
-            "properties": {"input_data": {"type": "object", "description": "Input data"}},
+            "properties": {
+                "input_data": {"type": "object", "description": "Input data"}
+            },
             "required": ["input_data"],
         },
         handler=lambda input_data: controller.invoke(input_data),
