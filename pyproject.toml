@@ -10,6 +10,18 @@ version = "0.0.2"
 description = "Agents You Need -- Tools to search and access the AI agents you need"
 readme = "README.md"
 requires-python = ">=3.10"
+license = "MIT"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 keywords = [
     "ai",
     "agents",
@@ -26,11 +38,11 @@ authors = [
 ]
 dependencies = []
 
-[project.license]
-text = "MIT"
-
 [project.urls]
-Homepage = "https://github.com/thorwhalen/ayn"
+Homepage = "https://thorwhalen.github.io/ayn/"
+Repository = "https://github.com/thorwhalen/ayn"
+Issues = "https://github.com/thorwhalen/ayn/issues"
+Changelog = "https://github.com/thorwhalen/ayn/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 fastapi = [
